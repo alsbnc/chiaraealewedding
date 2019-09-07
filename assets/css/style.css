@@ -203,6 +203,17 @@ h5 {
 /*===============
     LAYOUT
 ================*/
+/* Animating classes */
+.fade-in {
+  opacity: 0;
+  -webkit-transition: opacity 250ms ease-in;
+  transition: opacity 250ms ease-in;
+}
+
+.fade-in.appear {
+  opacity: 1;
+}
+
 .info,
 .join {
   background: #dacaca;

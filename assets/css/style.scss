@@ -207,6 +207,17 @@ h5 {
     LAYOUT
 ================*/
 
+/* Animating classes */
+
+.fade-in {
+    opacity: 0;
+    transition: opacity 250ms ease-in;
+}
+
+.fade-in.appear{
+    opacity: 1;
+}
+
 .info,
 .join{
     background: map-get($colors, main-dark);
