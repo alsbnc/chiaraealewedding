@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Chiara & Alessandro</title>
+        <!-- viewport meta to render pages on mobile properly -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- link to google fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Cookie|Livvic:400,700&display=swap" rel="stylesheet">
+      
+        <!-- link to my CSS -->
+        <link href="assets/css/style.css" rel="stylesheet">
+        <link href="assets/css/libraries/hamburgers.css" rel="stylesheet">
+    </head>
+
+<body>
+
+
+<!-- HEADER & MENU -->
+
+<header id="header">
+
+        <button class="hamburger hamburger--spin" id="hamburger" type="button" onclick="animateMenu()">
+                <span class="hamburger-box">
+                  <span class="hamburger-inner" id="hamburger-inner"></span>
+                </span>
+        </button>
+
+    <div class="container header-flex-container">
+        <div class="logo-container">
+            <h2 class="logo">Chiara e Alessandro</h2>
+            <p class="logo-subtitle">Il nostro matrimonio</p>
+        </div>
+    
+        <nav>
+            <ul class="nav-list">
+                <li class="nav-list__item"><a href="#info" class="nav-list__link">Info</a></li>
+                <li class="nav-list__item"><a href="#join" class="nav-list__link">Partecipa</a></li>
+                <li class="nav-list__item"><a href="#contacts" class="nav-list__link">Contatti</a></li>
+                <li class="nav-list__item"><a href="#" class="nav-list__link">Lista Nozze</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- <div class="countdown-container">
+        <p id="countdown">170</p>
+    </div> -->
+</header>
+
+<!-- MAIN HERO -->
+
+<main class="main">
+
+   <div class="main__background">
+        <img src="img/piano-min.jpg" class="blured" id="main-img" alt="">
+   </div>
+
+    <div class="main__body">
+        <h1>Chiara e Alessandro</h1>
+
+        <p class="main__date">8 dicembre 2019</p>
+    </div>
+</main>
+
+<!-- WELCOME -->
+
+<section class="welcome">
+    <div class="container">
+
+        <h2 class="title">Ci sposiamo!</h2>
+
+        <img src="img/trmp-pic.jpeg" alt="Foto di Chiara e Alessandro" class="section-img">
+
+        <p class="paragraph">
+            <strong>Siamo felici di annunciare il nostro matrimonio!</strong>
+        </p>
+        <p class="paragraph">
+            Se stai visitando questa pagina è perché saremmo lieti che prendessi parte a questo giorno importante. Desideriamo condividere con te questa emozione per averne un ricordo indimenticabile.
+        </p>
+        <p class="paragraph">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit.  <a href="#" class="link">Ipsa quisquam</a>, omnis consequuntur nam, aliquid similique cum eveniet magni officiis explicabo sequi rerum voluptas vitae vel voluptates nostrum minima velit hic!
+        </p>
+    </div>
+</section>
+
+<!-- INFO -->
+
+<section id="info" class="info">
+    <div class="container">
+        <h2 class="title">Informazioni utili</h2>
+        <p class="paragraph">
+            Di seguito potrai trovare tutte le informazioni utili per il nostro grande giorno. Per qualsiasi altra domanda <a href="#contacts" class="link">puoi contattarci</a> in qualsiasi momento.
+        </p>
+
+        <div class="info-body flex-container">
+            <div class="col card">
+                <div class="col__body">
+                    <h3 class="subtitle card__subtitle">La cerimonia</h3>
+                    <p class="paragraph card__body">
+                       La cerimonia si terrà presso la <strong>Basilica di San Vittore al Corpo</strong> in <strong>Via San Vittore 25</strong> a Milano. La messa avrà inizio alle <strong>ore 15:00</strong>.
+                    </p>
+                    <p class="paragraph card__body">
+                        Sarà possibile parcheggiare presso il parcheggio custodito di Via Zenale 6, a circa 400 metri dalla Basilica.
+                    </p>
+                </div>
+                <img src="img/san-vittore.jpg" alt="foto della Basilica di San Vittore al Corpo a Milano" class="location-img">
+            </div>
+
+            <div class="col card">
+                <div class="col__body">
+                    <h3 class="subtitle card__subtitle">Il ricevimento</h3>
+                    <p class="paragraph card__body">
+                        Una volta terminata la celebrazione, avremmo piacere di condividere con voi il pomeriggio e la serata. Il ricevimento avrà luogo a <strong>Cascina Boscaccio</strong>, raggiungibile in auto e con parcheggio in loco. L'accesso della cascina è sulla <strong>Strada Provinciale 59 a Bonirola di Gaggiano</strong>.
+                    </p>
+                </div>
+                <img src="img/cascina-boscaccio.jpg" alt="foto della Basilica di San Vittore al Corpo a Milano" class="location-img">
+            </div>
+        </div> <!-- end info-body -->
+
+
+        <!-- INDICAZIONI -->
+
+        <h4 class="subtitle-two">Indicazioni location</h4>
+        <p class="paragraph">
+            Potete visitare <a href="https://www.google.it/maps/place/Cascina+Boscaccio/@45.3999479,9.0657682,17z/data=!3m1!4b1!4m5!3m4!1s0x4786e802bd2eb1e7:0xd9e0c85f71a99654!8m2!3d45.3999479!4d9.0679569" class="link" alt="" target="_blank">questo link</a> per impostare la destinazione sul vostro cellulare. Cliccando sulle immagini qui sotto è possibile ingrandirle per visualizzare dettagli sulla parte finale del tragitto.
+        </p>
+
+        <div class="lightbox-img-container">
+
+            <a onclick="openInLightbox(1)" class="thumbnail-link" role="button">
+                <img src="img/Mappa-CascinaBoscaccio-min.jpg"alt="mappa del percorso verso CascinaBoscaccio" class="thumbnail-link__img">
+            </a>
+
+            <a onclick="openInLightbox(2)" class="thumbnail-link" role="button">
+                <img src="img/Street-view-min.jpg"alt="street view del percorso versoCascina Boscaccio" class="thumbnail-link__img">
+            </a>
+        </div>
+
+        <div id="lightbox" class="lightbox">
+            <div class="lightbox__item">
+                <a id="close" role="button" class="close"></a>
+                 <img id="light-img" class="lightbox__img" src="">
+            </div>
+        </div>
+
+    </div> <!-- end of .container -->
+</section>
+
+<!-- WEDDING LIST -->
+
+<section class="wed-list">
+    <div class="container">
+        <h2 class="title">Lista nozze</h2>
+        <p class="paragraph">
+            Abbiamo deciso di realizzare la nostra lista nozze presso l'agenzia Viaggi Buonarroti, che ha organizzato la nostra <strong>luna di miele</strong> in <strong>Nuova Zelanda</strong>.
+        </p>
+    
+        <img src="img/new-zeland.jpg" alt="Immagindella Nuova Zelanda" class="section-img">
+    
+        <p class="paragraph">
+            Visitando il sito dell'agenzia, potrete scoprire il nostro itinerario e alcune delle attività che abbiamo deciso di intraprendere durante il viaggio. È possibile contattare l'agenzia anche al numero di telefono <strong><a href="tel:0039024985401" class="link">02.4985401</a></strong>.
+        </p>
+    
+        <div class="btn-container">
+            <a href="http://www.viaggi-buonarroti.it/" class="btn-cta" alt="" target="_blank">Visita la Lista Nozze</a>
+        </div>
+    </div>
+</section>
+
+<!-- JOIN -->
+
+<section id="join" class="join">
+    <div class="container">
+        <h2 class="title">Conferma la tua presenza</h2>
+        <p class="paragraph">
+            Puoi confermare la tua presenza al ricevimento <strong>compilando il form</strong>, oppure contattandoci a <a href="#contacts" class="link accent-light">questi recapiti.</a>
+        </p>
+        <p class="paragraph">Nel caso <strong>non potessi partecipare</strong>, ti chiediamo di farcelo sapere telefonicamente.</p>
+
+            <!-- Begin Mailchimp Signup Form -->
+        <div id="mc_embed_signup" class="form-container">
+            <form action="https://me.us3.list-manage.com/subscribe/post?u=8d73c7dee2cdb97f68805c0d1&amp;id=01f2054399" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                <div id="mc_embed_signup_scroll">
+                <h5 class="form-title">Conferma qui!</h5>
+
+            <div class="mc-field-group flex-input-cont">
+                <input type="email" value="" name="EMAIL" class="required email form-input" id="mce-EMAIL" placeholder="*Email">
+            </div>
+
+            <div class="mc-field-group flex-input-cont">
+                <input type="text" value="" name="FNAME" class="required form-input" id="mce-FNAME" placeholder="*Nome">
+            </div>
+
+            <div class="mc-field-group flex-input-cont">
+                <input type="text" value="" name="LNAME" class="required form-input" id="mce-LNAME" placeholder="*Cognome">
+            </div>
+
+            <div class="mc-field-group info-popup flex-input-cont">
+                <input type="text" name="PHONE" class="form-input" value="" id="mce-PHONE" placeholder="Telefono"><a role="button" onclick="showInfobox(0)" data-tool-tip="Riempi lo spazio se preferisci essere contattato in questo modo" class="info-popup-link">?</a>
+            </div>
+
+            <div class="mc-field-group select-container">
+                <label for="mce-MMERGE3" class="form-label">Preferenze alimentari </label> <br>
+                <select name="MMERGE3" class="preferences" id="mce-MMERGE3">
+                <option value="Nessuna">Nessuna</option>
+            <option value="Vegetariano">Vegetariano</option>
+            <option value="Vegano">Vegano</option>
+                
+                </select>
+            </div>
+            <div class="mc-field-group">
+                <label for="mce-MMERGE5" class="form-label">Hai intolleranze o allergie? </label> <br>
+                <!-- <input type="text" value="" name="MMERGE5" class="text-box" id="mce-MMERGE5"> -->
+                <textarea type="text" value="" name="MMERGE5" class="text-box" id="mce-MMERGE5"></textarea>
+            </div>
+            <div class="mc-field-group">
+                <label for="mce-MMERGE6" class="form-label">Come hai conosciuto la sposa o lo sposo? </label> <br>
+                <!-- <input type="text" value="" name="MMERGE6" class="text-box" id="mce-MMERGE6"> -->
+                <textarea type="text" value="" name="MMERGE6" class="text-box" id="mce-MMERGE6"></textarea>
+            </div>
+            <div class="mc-field-group input-group autor-container">
+                <p class="form-label">Autorizza per continuare <a role="button" onclick="showInfobox(1)" data-tool-tip="I tuoi dati saranno visti solo dagli sposi e usati per i preparativi" class="info-popup-link inline-info-popup">?</a></p> <br>
+                <input type="checkbox" value="1" name="group[28225][1]" id="mce-group[28225]-28225-0" class="checkbox"><label for="mce-group[28225]-28225-0" class="checkbox-label">Autorizzo al trattamento dei miei dati personali.</label>
+            </div>
+
+                <div id="mce-responses" class="clear">
+                    <div class="response" id="mce-error-response" style="display:none"></div>
+                    <div class="response" id="mce-success-response" style="display:none"></div>
+                </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_8d73c7dee2cdb97f68805c0d1_01f2054399" tabindex="-1" value=""></div>
+                <div class="clear"><input type="submit" value="Parteciperò!" name="subscribe" id="mc-embedded-subscribe" class="btn"></div>
+                </div>
+            </form>
+        </div> <!-- end of form-container -->
+
+    </div>
+</section>
+
+<!-- CONTACTS -->
+
+<section id="contacts" class="contacts">
+    <div class="container">
+        <h2 class="title dark">Contatti utili</h2>
+        <p class="paragraph">
+            Di seguito trovi una lista di contatti che puoi     utilizzare per chiederci informazioni o confermare la   tua presenza.
+        </p>
+
+
+        <!--  ------fix flex -->
+        <div class="contact-list flex-container">
+            <div class="contact-list__col">
+                <h5 class="contact-list__subtitle">Alessandro</h5>
+                <p class="contact-list__item">Cellulare: <a href="tel:00393339059339"class="link">+39   333 9059339</a></p>
+                <p class="contact-list__item">Email: <a href="mailto:bencini@me.com"     class="link">bencini@me.com</a></p>
+            </div>
+
+            <div class="contact-list__col">
+                <h5 class="contact-list__subtitle">Chiara</h5>
+                <p class="contact-list__item">Cellulare: <a  href="tel:00393405760961"class="link">+39   340 5760961</a></p>
+                <p class="contact-list__item">Email: <a  href="mailto:ghr.garzia@gmail.com"   class="link">chr.garzia@gmail.com</a></p>
+            </div>
+
+
+            <div class="contact-list__col">
+                <h5 class="contact-list__subtitle">Angenzia viaggi</h5>
+                <p class="contact-list__item">Lista nozze: <a href="http:// www.viaggi-buonarroti.it/" class="link"  target="_blank">Clicca qui!</a></p>
+                <p class="contact-list__item">Telefono: <a   href="tel:0039024985401"  class="link">02.4985401</a></p>
+            </div>
+        </div> <!-- end of .contact-list -->
+
+        <img src="img/piano.jpg" alt="paletta di una chitarra di fronte alla tastiera di un pianoforte">
+    </div> <!-- end of .container -->
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+    <div class="container">
+        <h2 class="footer-title">Chiara e Alessandro</h2>
+
+        <div class="footer-body">
+            <div class="footer-menu">
+                <ul class="footer-list">
+                    <li class="footer-list__item"><a href="#" class="footer-list__link">Home</a></li>
+                    <li class="footer-list__item"><a href="" class="footer-list__link">Info</a></li>
+                    <li class="footer-list__item"><a href="" class="footer-list__link">Partecipa</a></li>
+                    <li class="footer-list__item"><a href="" class="footer-list__link">Contatti</a></li>
+                    <li class="footer-list__item"><a href="" class="footer-list__link">Lista nozze</a></li>
+                </ul>
+            </div>
+
+            <div class="cookie-privacy">
+                <p class="link-cont"><a href="#" class="privacy-link">Cookie Policy</a></p>
+                <p class="link-cont"><a href="#" class="privacy-link">Privacy Policy</a></p>
+            </div>
+
+        </div> <!-- end of footer body -->
+
+        <p class="copyright">AB Web 2019 ©</p>
+    </div> <!-- end of container -->
+</footer>
+    
+
+
+
+
+<!-- SCRIPTS -->
+<script src="assets/js/animations.js"></script>
+<script src="assets/js/scrollFx.js"></script>
+
+ </body>
+</html>
