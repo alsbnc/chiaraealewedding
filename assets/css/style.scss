@@ -115,6 +115,12 @@ h5 {
     margin: 0 auto;
     border-radius: 1px;
     background: map-get($colors, accent-dark);
+    transform: scale(0, 1);
+    transition: transform 300ms ease-out 400ms;
+}
+
+.appear.title::after{
+    transform: scale(1, 1);
 }
 
 .subtitle {
@@ -503,6 +509,10 @@ nav{
         }
     }
 
+    &__divider{
+        margin: -0.5em;
+    }
+
     &__date{
         margin: 0;
         font-weight: 400;
@@ -527,6 +537,19 @@ nav{
     &__body{
         opacity: .825;
     }
+}
+
+.card,
+.contact-list__col{
+    transform: translate(-20%, 5%);
+    opacity: 0;
+    transition: all 550ms ease-in-out;
+}
+
+.card.appear,
+.contact-list__col.appear{
+    opacity: 1;
+    transform: translate(0, 0);
 }
 
 .lightbox-img-container{
@@ -751,7 +774,7 @@ nav{
 
 /* CONTACTS */
 
-.contact-list{
+.contact-list{ /* animation appear in INFO section */
     align-items: center;
     margin-bottom: 2em;
 
@@ -989,6 +1012,14 @@ footer{
     }
 
     /* INFO - lightbox */
+    
+    .from-right{
+        transform: translate(20%, 5%);
+    }
+
+    .center {
+        transform: translate(0, 0);
+    }
 
     .lightbox__item{
         width: 65%;

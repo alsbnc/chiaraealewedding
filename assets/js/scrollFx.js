@@ -1,48 +1,4 @@
-/* SMOOTH SCROLL */
-
-(function() {
-	scrollTo();
-})();
-
-function scrollTo() {
-	var links = document.getElementsByTagName('a');
-	for (var i = 0; i < links.length; i++) {
-		var link = links[i];
-		if ((link.href && link.href.indexOf('#') != -1) && ((link.pathname == location.pathname) || ('/' + link.pathname == location.pathname)) && (link.search == location.search)) {
-            link.onclick = scrollAnchors;
-		}
-	}
-}
-
-function scrollAnchors(e, respond = null) {
-	const distanceToTop = el => Math.floor(el.getBoundingClientRect().top);
-	e.preventDefault();
-	var targetID = (respond) ? respond.getAttribute('href') : this.getAttribute('href');
-	const targetAnchor = document.querySelector(targetID);
-	if (!targetAnchor) return;
-
-	/* change scroll distance from target top based on screen width */
-
-	var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
-	
-	if (viewportWidth > 950){
-		var originalTop = distanceToTop(targetAnchor) -70 /* -70 to avoid header to cover section title */;
-	} else {
-		var originalTop = distanceToTop(targetAnchor) -50;
-	}
-
-    window.scrollBy({ top: originalTop, left: 0, behavior: 'smooth' });
-
-	const checkIfDone = setInterval(function() {
-		const atBottom = window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 2;
-		if (distanceToTop(targetAnchor) === 0 || atBottom) {
-			targetAnchor.tabIndex = '-1';
-            /* targetAnchor.focus(); */
-			window.history.pushState('', '', targetID);
-            clearInterval(checkIfDone);
-		}
-	}, 100);
-}
+/* smooth scroll is handled by zenscroll, but it has to be fixed: stop before title and stopping before section */
 
 /* CHANGE MENU COLOR BASED ON BACKGROUND */
 
@@ -74,9 +30,12 @@ menuColorChangeObserver.observe(welcomeSection);
 /* ANIMATE PAGE ELEMS */
 
 const faders = document.querySelectorAll(".fade-in");
+const secTitles = document.querySelectorAll(".title");
+const cards = document.querySelectorAll(".card");
+const contactCards = document.querySelectorAll(".contact-list__col")
 
 const appearOnScrollOptions = {
-	threshold: 0.5,
+	threshold: 0.4
 };
 const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
 	entries.forEach(entry => {
@@ -91,6 +50,18 @@ const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
 
 faders.forEach(fader => {
 	appearOnScroll.observe(fader);
+})
+
+secTitles.forEach(title => {
+	appearOnScroll.observe(title);
+})
+
+cards.forEach(card => {
+	appearOnScroll.observe(card);
+})
+
+contactCards.forEach(card => {
+	appearOnScroll.observe(card);
 })
 
 /* LAZY LOAD IMAGES ON SCROLL */

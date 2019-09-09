@@ -114,6 +114,17 @@ h5 {
   margin: 0 auto;
   border-radius: 1px;
   background: #7e0f2b;
+  -webkit-transform: scale(0, 1);
+          transform: scale(0, 1);
+  -webkit-transition: -webkit-transform 300ms ease-out 400ms;
+  transition: -webkit-transform 300ms ease-out 400ms;
+  transition: transform 300ms ease-out 400ms;
+  transition: transform 300ms ease-out 400ms, -webkit-transform 300ms ease-out 400ms;
+}
+
+.appear.title::after {
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
 }
 
 .subtitle {
@@ -565,6 +576,10 @@ nav {
   border: solid #7e0f2b 2px;
 }
 
+.main__divider {
+  margin: -0.5em;
+}
+
 .main__date {
   margin: 0;
   font-weight: 400;
@@ -588,6 +603,22 @@ nav {
 
 .card__body {
   opacity: .825;
+}
+
+.card,
+.contact-list__col {
+  -webkit-transform: translate(-20%, 5%);
+          transform: translate(-20%, 5%);
+  opacity: 0;
+  -webkit-transition: all 550ms ease-in-out;
+  transition: all 550ms ease-in-out;
+}
+
+.card.appear,
+.contact-list__col.appear {
+  opacity: 1;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
 }
 
 .lightbox-img-container {
@@ -850,6 +881,7 @@ nav {
 
 /* CONTACTS */
 .contact-list {
+  /* animation appear in INFO section */
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1078,6 +1110,14 @@ footer a {
     font-size: .9rem;
   }
   /* INFO - lightbox */
+  .from-right {
+    -webkit-transform: translate(20%, 5%);
+            transform: translate(20%, 5%);
+  }
+  .center {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
   .lightbox__item {
     width: 65%;
   }
