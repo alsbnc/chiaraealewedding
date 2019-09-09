@@ -808,7 +808,7 @@ nav {
   top: .5em;
   padding: 0.4em;
   background: #7e0f2b;
-  border-radius: 2em;
+  border-radius: 50%;
   line-height: .5;
 }
 

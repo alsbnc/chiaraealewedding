@@ -1,6 +1,6 @@
 /* LAZY LOAD MAIN IMG */
 
-const mainImg = document.getElementById("main-img");
+const mainImg = document.querySelector("#main-img");
 const bigMainImg = document.createElement("img");
 
 bigMainImg.onload = function(){
@@ -15,8 +15,8 @@ setTimeout(() => {
 
 /* ANIMATE HAM MENU */
 
-const ham = document.getElementById("hamburger");
-const header = document.getElementById("header");
+const ham = document.querySelector("#hamburger");
+const header = document.querySelector("#header");
 
 function animateMenu(){
     ham.classList.toggle("is-active");
@@ -30,18 +30,16 @@ function animateMenu(){
 
 // close after link click
 
-const navLinks = document.getElementsByClassName("nav-list__link");
+const navLinks = document.querySelectorAll(".nav-list__link");
 
-for(i = 0; i < navLinks.length; i++){
-    let navLink = navLinks[i];
-
-    navLink.addEventListener("click", function(){
+navLinks.forEach(link => {
+    link.addEventListener("click", function(){
         ham.classList.remove("is-active");
         header.classList.remove("header-showed");
         hamCont.classList.toggle("dark-ham");
         hiddenLogos.classList.toggle("hidden");
     })
-}
+})
 
 //close when click outside
 
@@ -56,14 +54,14 @@ document.addEventListener("click", function(event){
 
 /* OPEN & CLOSE LIGHTBOX */
 
-const lightbox = document.getElementById("lightbox");
+const lightbox = document.querySelector("#lightbox");
 
 // Open clicked thumb in lightbox
 
 
 function openInLightbox(i){
     i = i.toString();
-    const lightboxImg = document.getElementById("light-img");
+    const lightboxImg = document.querySelector("#light-img");
     
     lightboxImg.src = "img/img-" + i + ".jpg";
     lightbox.style.transform = "scale(1)";
@@ -73,7 +71,7 @@ function openInLightbox(i){
   
 //Close lightbox
   
-const closeButton = document.getElementById("close");
+const closeButton = document.querySelector("#close");
   
 closeButton.addEventListener("click", closeLightbox);
   
@@ -84,7 +82,7 @@ function closeLightbox(){
 
 /* INFOBOX */
 
-const infoPopups = document.getElementsByClassName("info-popup-link");
+const infoPopups = document.querySelectorAll(".info-popup-link");
 
 function showInfobox(i){
     infoPopups[i].classList.add("info-popup-visible");   
@@ -93,13 +91,12 @@ function showInfobox(i){
 // close infobox
 
 document.addEventListener("click", function(event){
-    for(i = 0; i < infoPopups.length; i++){
-        let infoPopup = infoPopups[i];
-
+    infoPopups.forEach(infoPopup => {
         if(event.target.closest(".info-popup-link")) return;
 
         infoPopup.classList.remove("info-popup-visible");
-    }
+    })
+
 })
 
 

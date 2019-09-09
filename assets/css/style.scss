@@ -711,7 +711,7 @@ nav{
     top: .5em;
     padding: 0.4em;
     background: map-get($colors, accent-dark);
-    border-radius: 2em;
+    border-radius: 50%;
     line-height: .5;
 
     &::after{
