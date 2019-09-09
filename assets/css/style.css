@@ -365,6 +365,7 @@ nav {
   padding-top: 1em;
   -webkit-transition: opacity 200ms ease-in;
   transition: opacity 200ms ease-in;
+  color: #f9f0ff;
 }
 
 .logo-small {
@@ -458,11 +459,6 @@ nav {
   bottom: -10px;
 }
 
-/* .dark-ham,
-     .dark-ham::before,
-     .dark-ham::after{
-       background-color: #7e0f2b;
-     } */
 /*
       * Spin
       */

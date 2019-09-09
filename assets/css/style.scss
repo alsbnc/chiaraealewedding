@@ -351,13 +351,14 @@ nav{
     padding-right: 1em;
     padding-top: 1em;
     transition: opacity 200ms ease-in;
+    color: map-get($colors, font-light);
  }
 
  .logo-small{
     margin: 0;
     font-size: 1.5rem;
     line-height: 0.75;
-}
+} 
 
 .logo-wrap .logo-subtitle{
     font-size: .55rem;
@@ -392,7 +393,8 @@ nav{
      .hamburger.is-active .hamburger-inner,
      .hamburger.is-active .hamburger-inner::before,
      .hamburger.is-active .hamburger-inner::after {
-       background-color: #f9f0ff; }
+       background-color: map-get($colors, font-light);
+    }
    
    .hamburger-box {
      width: 40px;
@@ -407,7 +409,7 @@ nav{
      .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
        width: 35px;
        height: 4px;
-       background-color: #f9f0ff;
+       background-color: map-get($colors, font-light);;
        border-radius: 4px;
        position: absolute;
        transition-property: transform;
@@ -422,12 +424,6 @@ nav{
        top: -10px; }
      .hamburger-inner::after {
        bottom: -10px; }
- 
-     /* .dark-ham,
-     .dark-ham::before,
-     .dark-ham::after{
-       background-color: #7e0f2b;
-     } */
    
    /*
       * Spin
