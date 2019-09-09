@@ -755,17 +755,35 @@ nav{
 
 /* CONTACTS */
 
-.contact-list {
-    margin-bottom: 1em;
+.contact-list{
     align-items: center;
+    margin-bottom: 2em;
 
     &__col{
+        width: 85%;
+        background: #fffefe;
+        color: map-get($colors, accent-dark);
         text-align: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+        margin-top: 2em;
     }
 
     &__subtitle{
         margin-bottom: 0;
-        margin-top: 1em;
+        margin-top: 0;
+        color: #fff;
+        background: map-get($colors, accent-dark);
+        padding: .75em;
+
+        &::after{
+            content: "";
+            display: block;
+            background: #fff;
+            height: 2px;
+            width: 20%;
+            margin: 0 auto;
+            border-radius: 1px; /* to here */
+        }
     }
 }
 
@@ -850,6 +868,14 @@ footer{
     .close{
         top: 0.25em;
     }
+
+    /* CONTACTS */
+
+    .contact-list{
+        &__col {
+            width: 50%;
+        }
+    }
 }
 
 @media (min-width: 750px){
@@ -862,7 +888,7 @@ footer{
     
     /* HEADER */
 
-    #hamburger{
+    .ham-container{
         display: none;
     }
 
@@ -956,34 +982,12 @@ footer{
     .contact-list{
         align-items: flex start;
         margin-bottom: 2em;
-        margin-top: 2em;
 
         &__col{
             width: 32%;
-            background: #fffefe; /* modified form here */
-            color: map-get($colors, accent-dark);
-            box-shadow: 0em 4px 8px rgba(0, 0, 0, 0.25);
 
             .link{
                 font-size: .9rem;
-            }
-        }
-
-        &__subtitle{
-            margin-bottom: 0;
-            margin-top: 0;
-            color: #fff;
-            background: map-get($colors, accent-dark);
-            padding: .75em;
-
-            &::after{
-                content: "";
-                display: block;
-                background: #fff;
-                height: 2px;
-                width: 20%;
-                margin: 0 auto;
-                border-radius: 1px; /* to here */
             }
         }
     }
