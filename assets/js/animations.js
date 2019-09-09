@@ -38,6 +38,8 @@ for(i = 0; i < navLinks.length; i++){
     navLink.addEventListener("click", function(){
         ham.classList.remove("is-active");
         header.classList.remove("header-showed");
+        hamCont.classList.toggle("dark-ham");
+        hiddenLogos.classList.toggle("hidden");
     })
 }
 
@@ -48,6 +50,8 @@ document.addEventListener("click", function(event){
 
         header.classList.remove("header-showed");
         ham.classList.remove("is-active");
+        hamCont.classList.toggle("dark-ham");
+        hiddenLogos.classList.toggle("hidden");
 });
 
 /* OPEN & CLOSE LIGHTBOX */
