@@ -24,10 +24,11 @@ function scrollAnchors(e, respond = null) {
 	/* change scroll distance from target top based on screen width */
 
 	var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+	
 	if (viewportWidth > 950){
 		var originalTop = distanceToTop(targetAnchor) -70 /* -70 to avoid header to cover section title */;
 	} else {
-		var originalTop = distanceToTop(targetAnchor);
+		var originalTop = distanceToTop(targetAnchor) -50;
 	}
 
     window.scrollBy({ top: originalTop, left: 0, behavior: 'smooth' });
@@ -45,19 +46,25 @@ function scrollAnchors(e, respond = null) {
 
 /* CHANGE MENU COLOR BASED ON BACKGROUND */
 
-const hamLines = document.getElementById("hamburger-inner");
+/* const hamLines = document.getElementById("hamburger-inner"); */
+const hamCont = document.querySelector(".ham-container");
+const hiddenLogos = document.querySelector(".hidden");
 const welcomeSection = document.querySelector("main");
 
 const menuColorChangeOptions = {
-	rootMargin: "-35px 0px 0px 0px"
+	rootMargin: "-70px 0px 0px 0px"
 };
 
 const menuColorChangeObserver = new IntersectionObserver(function(entries, menuColorChangeObserver){
 	entries.forEach(entry => {
 		if(!entry.isIntersecting){
-			hamLines.classList.add("dark-ham");
+			hamCont.classList.add("dark-ham");
+			hamCont.classList.add("showed");
+			hiddenLogos.classList.remove("hidden");
 		} else {
-			hamLines.classList.remove("dark-ham");
+			hamCont.classList.remove("dark-ham");
+			hamCont.classList.remove("showed");
+			hiddenLogos.classList.add("hidden");
 		}
 	});
 }, menuColorChangeOptions);

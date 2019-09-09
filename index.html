@@ -12,7 +12,7 @@
       
         <!-- link to my CSS -->
         <link href="assets/css/style.css" rel="stylesheet">
-        <link href="assets/css/libraries/hamburgers.css" rel="stylesheet">
+        <!-- <link href="assets/css/libraries/hamburgers.css" rel="stylesheet"> -->
     </head>
 
 <body>
@@ -22,11 +22,17 @@
 
 <header id="header">
 
+    <div class="ham-container">
         <button class="hamburger hamburger--spin" id="hamburger" type="button" onclick="animateMenu()">
-                <span class="hamburger-box">
-                  <span class="hamburger-inner" id="hamburger-inner"></span>
-                </span>
+            <span class="hamburger-box">
+                    <span class="hamburger-inner" id="hamburger-inner"></span>
+            </span>
         </button>
+        <div class="logo-wrap hidden">
+            <h2 class="logo-small">Chiara e Alessandro</h2>
+            <p class="logo-subtitle">Il nostro matrimonio</p>
+        </div>
+    </div>
 
     <div class="container header-flex-container">
         <div class="logo-container">

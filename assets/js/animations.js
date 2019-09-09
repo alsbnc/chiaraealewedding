@@ -21,6 +21,11 @@ const header = document.getElementById("header");
 function animateMenu(){
     ham.classList.toggle("is-active");
     header.classList.toggle("header-showed");
+    
+    if(hamCont.classList.contains("showed")){
+        hamCont.classList.toggle("dark-ham");
+        hiddenLogos.classList.toggle("hidden");
+    }
 }
 
 // close after link click

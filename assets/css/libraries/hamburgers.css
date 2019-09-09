@@ -71,16 +71,6 @@
     .dark-ham::after{
       background-color: #7e0f2b;
     }
-
-   /*  .hamburger:hover .hamburger-inner,
-    .hamburger:hover .hamburger-inner::before,
-    .hamburger:hover .hamburger-inner::after,
-    .hamburger:focus .hamburger-inner,
-    .hamburger:focus .hamburger-inner::before,
-    .hamburger:focus .hamburger-inner::after{
-      outline: none;
-      background-color: #ffffff;
-    } */
   
   /*
      * Spin
