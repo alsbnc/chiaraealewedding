@@ -255,6 +255,11 @@ header{
     transition: top 500ms ease-in-out;
 }
 
+.header__link{
+    color: #fff;
+    text-decoration: none;
+}
+
 .header-showed{
     top: 0;
 }
