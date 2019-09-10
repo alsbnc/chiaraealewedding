@@ -32,8 +32,8 @@ function animateMenu(){
 
 const navLinks = document.querySelectorAll(".nav-list__link");
 
-navLinks.forEach(link => {
-    link.addEventListener("click", function(){
+navLinks.forEach(navLink => {
+    navLink.addEventListener("click", function(){
         ham.classList.remove("is-active");
         header.classList.remove("header-showed");
         hamCont.classList.toggle("dark-ham");
@@ -48,8 +48,8 @@ document.addEventListener("click", function(event){
 
         header.classList.remove("header-showed");
         ham.classList.remove("is-active");
-        hamCont.classList.toggle("dark-ham");
-        hiddenLogos.classList.toggle("hidden");
+        hamCont.classList.add("dark-ham");
+        hiddenLogos.classList.remove("hidden");
 });
 
 /* OPEN & CLOSE LIGHTBOX */
