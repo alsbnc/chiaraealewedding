@@ -11,8 +11,9 @@ function linkClick(event) {
 
   function smoothScroll(event) {
 	event.preventDefault();
+	const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
 	const targetId = event.currentTarget.getAttribute("href")==="#" ? "header" : event.currentTarget.getAttribute("href");
-	const targetPosition = document.querySelector(targetId).offsetTop - 50;
+	const targetPosition = viewportWidth > 750 ? document.querySelector(targetId).offsetTop - 70 : document.querySelector(targetId).offsetTop -40;
 	const startPosition = window.pageYOffset;
 	const distance = targetPosition - startPosition;
 	const duration = 1000;
