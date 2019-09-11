@@ -110,11 +110,17 @@ h5 {
 .title::after {
     content: "";
     display: block;
-    width: 25%;
+    width: 10%;
     height: 2px;
     margin: 0 auto;
     border-radius: 1px;
     background: map-get($colors, accent-dark);
+    transform: scale(0, 1);
+    transition: transform 300ms ease-out 400ms;
+}
+
+.appear.title::after{
+    transform: scale(1, 1);
 }
 
 .subtitle {
@@ -207,10 +213,31 @@ h5 {
     LAYOUT
 ================*/
 
+/* Animating classes */
+
+.fade-in {
+    opacity: 0;
+    transition: opacity 250ms ease-in;
+}
+
+.fade-in.appear{
+    opacity: 1;
+}
+
 .info,
 .join{
     background: map-get($colors, main-dark);
     color: map-get($colors, font-dark);
+}
+
+.section-img{
+    min-height: 275px;
+    object-fit: cover;
+}
+
+.location-img{
+    min-height: 240px;
+    object-fit: cover;
 }
 
 /* HEADER */
@@ -226,6 +253,11 @@ header{
     z-index: 100;
     padding: 3em 0 1em 0;
     transition: top 500ms ease-in-out;
+}
+
+.header__link{
+    color: #fff;
+    text-decoration: none;
 }
 
 .header-showed{
@@ -306,6 +338,138 @@ nav{
     transform: scale(1, 1);
 }
 
+/* Ham */
+
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+
+ .ham-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 200ms ease-in;
+
+    .hidden{
+        opacity: 0;
+    }
+ }
+
+ .dark-ham{
+    background: rgba(62, 17, 29, 0.97);
+ }
+
+ .logo-wrap{
+    padding-right: 1em;
+    padding-top: 1em;
+    transition: opacity 200ms ease-in;
+    color: map-get($colors, font-light);
+ }
+
+ .logo-small{
+    margin: 0;
+    font-size: 1.5rem;
+    line-height: 0.75;
+} 
+
+.logo-wrap .logo-subtitle{
+    font-size: .55rem;
+    letter-spacing: 0.18em;
+}
+
+ .hamburger {
+    /* position mod */
+     padding: 1em 1em .65em 1em;
+     display: inline-block;
+     cursor: pointer;
+     transition-property: opacity, filter;
+     transition-duration: 0.15s;
+     transition-timing-function: linear;
+     font: inherit;
+     color: inherit;
+     text-transform: none;
+     background-color: transparent;
+     border: 0;
+     margin: 0;
+     overflow: visible; }
+     .hamburger:focus,
+     .hamburger:hover{
+         outline: none;
+         opacity: 1;
+     }
+ 
+     .hamburger:active{
+       outline: none;
+     }
+ 
+     .hamburger.is-active .hamburger-inner,
+     .hamburger.is-active .hamburger-inner::before,
+     .hamburger.is-active .hamburger-inner::after {
+       background-color: map-get($colors, font-light);
+    }
+   
+   .hamburger-box {
+     width: 40px;
+     height: 24px;
+     display: inline-block;
+     position: relative; }
+   
+   .hamburger-inner {
+     display: block;
+     top: 50%;
+     margin-top: -2px; }
+     .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+       width: 35px;
+       height: 4px;
+       background-color: map-get($colors, font-light);;
+       border-radius: 4px;
+       position: absolute;
+       transition-property: transform;
+       transition-duration: 0.15s;
+       transition-timing-function: ease; 
+     
+     }
+     .hamburger-inner::before, .hamburger-inner::after {
+       content: "";
+       display: block; }
+     .hamburger-inner::before {
+       top: -10px; }
+     .hamburger-inner::after {
+       bottom: -10px; }
+   
+   /*
+      * Spin
+      */
+   .hamburger--spin .hamburger-inner {
+     transition-duration: 0.22s;
+     transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+     .hamburger--spin .hamburger-inner::before {
+       transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in; }
+     .hamburger--spin .hamburger-inner::after {
+       transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+   
+   .hamburger--spin.is-active .hamburger-inner {
+     transform: rotate(225deg);
+     transition-delay: 0.12s;
+     transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+     .hamburger--spin.is-active .hamburger-inner::before {
+       top: 0;
+       opacity: 0;
+       transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out; }
+     .hamburger--spin.is-active .hamburger-inner::after {
+       bottom: 0;
+       transform: rotate(-90deg);
+       transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1); }
+
 
 /* MAIN */
 
@@ -360,6 +524,10 @@ nav{
         }
     }
 
+    &__divider{
+        margin: -0.5em;
+    }
+
     &__date{
         margin: 0;
         font-weight: 400;
@@ -386,6 +554,19 @@ nav{
     }
 }
 
+.card,
+.contact-list__col{
+    transform: translate(-20%, 5%);
+    opacity: 0;
+    transition: all 550ms ease-in-out;
+}
+
+.card.appear,
+.contact-list__col.appear{
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
 .lightbox-img-container{
     display: flex;
     justify-content: space-between;
@@ -403,6 +584,7 @@ nav{
 
 .lightbox {
     position: fixed;
+    z-index: 101;
     top: 0;
     left: 0;
     width: 100vw;
@@ -419,13 +601,13 @@ nav{
       position: relative;
       width: 100%;
       background: #000;
-      display: flex;
-      justify-content: center;
       padding: 2em 1em;
+      text-align: center;
     }
 
     &__img{
         max-width: 500px;
+       width: 100%;
     }
   }
   
@@ -537,6 +719,7 @@ nav{
     display: flex;
     align-items: flex-start;
     justify-content: center;
+    position: relative;
 }
 
 .info-popup{
@@ -557,15 +740,20 @@ nav{
     }
 }
 
+.info-popup-noInput{
+    position: relative;
+}
+
 .info-popup-link{
     cursor: pointer;
-    position: relative;
-    color: #fff;
+    position: absolute;
+    right: .75em;
     top: .5em;
-    padding: 0.4em;
-    background: map-get($colors, accent-dark);
-    border-radius: 2em;
-    line-height: .5;
+    color: #fff;
+    width: 1.5em;
+    max-height: 1.5em;
+    background: #7e0f2b;
+    border-radius: 50%;
 
     &::after{
         content: attr(data-tool-tip);
@@ -594,11 +782,10 @@ nav{
      }
 
  .inline-info-popup{
-     color: map-get($colors, accent-dark);
-     background: #fff;
-     padding: 0 0.4em;
-     top: 0.1em;
-     left: 0.25em;
+    color: map-get($colors, accent-dark);
+    background: #fff;
+    right: 1em;
+    top: .75em;
 
      &::after{
          color: #fff;
@@ -608,17 +795,35 @@ nav{
 
 /* CONTACTS */
 
-.contact-list {
-    margin-bottom: 1em;
+.contact-list{ /* animation appear in INFO section */
     align-items: center;
+    margin-bottom: 2em;
 
     &__col{
+        width: 85%;
+        background: #fffefe;
+        color: map-get($colors, accent-dark);
         text-align: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+        margin-top: 2em;
     }
 
     &__subtitle{
         margin-bottom: 0;
-        margin-top: 1em;
+        margin-top: 0;
+        color: #fff;
+        background: map-get($colors, accent-dark);
+        padding: .75em;
+
+        &::after{
+            content: "";
+            display: block;
+            background: #fff;
+            height: 2px;
+            width: 20%;
+            margin: 0 auto;
+            border-radius: 1px; /* to here */
+        }
     }
 }
 
@@ -697,11 +902,38 @@ footer{
     }
 }
 
+@media (min-width: 450px){
+
+    .section-img{
+        min-height: 340px;
+    }
+    
+    .location-img{
+        min-height: 310px;
+    }
+}
+
 @media (min-width: 560px){
+
+    .section-img{
+        min-height: 460px;
+    }
+    
+    .location-img{
+        min-height: 415px;
+    }
 
     /* INFO - lightbox */
     .close{
         top: 0.25em;
+    }
+
+    /* CONTACTS */
+
+    .contact-list{
+        &__col {
+            width: 50%;
+        }
     }
 }
 
@@ -712,10 +944,18 @@ footer{
     .container{
         width: 80%;
     }
+
+    .section-img{
+        min-height: 515px;
+    }
+    
+    .location-img{
+        min-height: 475px;
+    }
     
     /* HEADER */
 
-    #hamburger{
+    .ham-container{
         display: none;
     }
 
@@ -809,39 +1049,33 @@ footer{
     .contact-list{
         align-items: flex start;
         margin-bottom: 2em;
-        margin-top: 2em;
 
         &__col{
             width: 32%;
-            background: #fffefe; /* modified form here */
-            color: map-get($colors, accent-dark);
-            box-shadow: 0em 4px 8px rgba(0, 0, 0, 0.25);
 
             .link{
                 font-size: .9rem;
             }
         }
+    }
 
-        &__subtitle{
-            margin-bottom: 0;
-            margin-top: 0;
-            color: #fff;
-            background: map-get($colors, accent-dark);
-            padding: .75em;
-
-            &::after{
-                content: "";
-                display: block;
-                background: #fff;
-                height: 2px;
-                width: 20%;
-                margin: 0 auto;
-                border-radius: 1px; /* to here */
-            }
-        }
+    .section-img{
+        min-height: 630px;
+    }
+    
+    .location-img{
+        min-height: 255px;
     }
 
     /* INFO - lightbox */
+    
+    .from-right{
+        transform: translate(20%, 5%);
+    }
+
+    .center {
+        transform: translate(0, 0);
+    }
 
     .lightbox__item{
         width: 65%;
