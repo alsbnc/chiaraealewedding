@@ -659,6 +659,7 @@ nav {
 
 .lightbox {
   position: fixed;
+  z-index: 101;
   top: 0;
   left: 0;
   width: 100vw;
@@ -685,17 +686,13 @@ nav {
   position: relative;
   width: 100%;
   background: #000;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   padding: 2em 1em;
+  text-align: center;
 }
 
 .lightbox__img {
   max-width: 500px;
+  width: 100%;
 }
 
 .close {
@@ -823,6 +820,7 @@ nav {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  position: relative;
 }
 
 .info-popup {
@@ -845,15 +843,20 @@ nav {
   border: 2px solid #fff;
 }
 
+.info-popup-noInput {
+  position: relative;
+}
+
 .info-popup-link {
   cursor: pointer;
-  position: relative;
-  color: #fff;
+  position: absolute;
+  right: .75em;
   top: .5em;
-  padding: 0.4em;
+  color: #fff;
+  width: 1.5em;
+  max-height: 1.5em;
   background: #7e0f2b;
   border-radius: 50%;
-  line-height: .5;
 }
 
 .info-popup-link::after {
@@ -887,9 +890,8 @@ nav {
 .inline-info-popup {
   color: #7e0f2b;
   background: #fff;
-  padding: 0 0.4em;
-  top: 0.1em;
-  left: 0.25em;
+  right: 1em;
+  top: .75em;
 }
 
 .inline-info-popup::after {
