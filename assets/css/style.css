@@ -173,6 +173,7 @@ h5 {
 }
 
 .btn-cta,
+.sub-btn,
 .btn {
   padding: 0.7em 1.9em;
   border-radius: 2em;
@@ -180,7 +181,8 @@ h5 {
   transition: all 100ms ease-in;
 }
 
-.btn-cta {
+.btn-cta,
+.sub-btn {
   display: inline-block;
   margin: 1em auto;
   color: #fff;
@@ -190,7 +192,9 @@ h5 {
 }
 
 .btn-cta:hover,
-.btn-cta:focus {
+.btn-cta:focus,
+.sub-btn:focus,
+.sub-btn:hover {
   color: #7e0f2b;
   background: transparent;
 }
@@ -1006,6 +1010,41 @@ footer a {
   font-size: .75rem;
 }
 
+/* PARTECIPATE CONFIRMATION */
+section.sub-conf {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section.sub-conf .title {
+  font-size: 1.75rem;
+}
+
+.sub-conf__container {
+  background: #dacaca;
+  padding: 2em 1.25em;
+  border-radius: 1.5em;
+}
+
+.sub-btns-cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.sub-btn {
+  padding: 0.5em 1.5em;
+}
+
 /*===============
     MEDIA Q
 ================*/
@@ -1041,6 +1080,13 @@ footer a {
   /* CONTACTS */
   .contact-list__col {
     width: 50%;
+  }
+  /* Part conf */
+  .sub-btns-cont {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
 }
 
@@ -1116,6 +1162,10 @@ footer a {
     width: 85%;
     margin: 0 auto;
     margin-top: 2em;
+  }
+  /* Part conf */
+  .sub-conf__container {
+    padding: 3em 4em;
   }
 }
 

@@ -171,13 +171,15 @@ h5 {
 }
 
 .btn-cta,
+.sub-btn,
 .btn {
     padding: 0.7em 1.9em;
     border-radius: 2em;
     transition: all 100ms ease-in;
 }
 
-.btn-cta {
+.btn-cta,
+.sub-btn {
     display: inline-block;
     margin: 1em auto;
     color: #fff;
@@ -187,7 +189,9 @@ h5 {
 }
 
 .btn-cta:hover,
-.btn-cta:focus {
+.btn-cta:focus,
+.sub-btn:focus,
+.sub-btn:hover {
     color: map-get($colors, accent-dark);
     background: transparent;
 }
@@ -887,6 +891,33 @@ footer{
     font-size: .75rem;
 }
 
+/* PARTECIPATE CONFIRMATION */
+
+section.sub-conf {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+
+    .title{
+        font-size: 1.75rem;
+    }
+}
+
+.sub-conf__container {
+    background: map-get($colors, main-dark);
+    padding: 2em 1.25em;;
+    border-radius: 1.5em;
+}
+
+.sub-btns-cont{
+    display: flex;
+    flex-direction: column;
+}
+
+.sub-btn{
+    padding: 0.5em 1.5em
+}
+
 /*===============
     MEDIA Q
 ================*/
@@ -934,6 +965,12 @@ footer{
         &__col {
             width: 50%;
         }
+    }
+
+    /* Part conf */
+
+    .sub-btns-cont{
+        flex-direction: row;
     }
 }
 
@@ -1025,6 +1062,12 @@ footer{
         width: 85%;
         margin: 0 auto;
         margin-top: 2em;
+    }
+
+    /* Part conf */
+
+    .sub-conf__container{
+        padding: 3em 4em;
     }
 }
 
