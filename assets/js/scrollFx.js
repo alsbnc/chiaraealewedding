@@ -1,5 +1,5 @@
 /* SMOOTH SCROLL */
-const links = document.querySelectorAll("a");
+const links = document.querySelectorAll(".smooth-link");
 
 for(let i=0; i<links.length; i++) {
 	links[i].addEventListener("click", linkClick);
